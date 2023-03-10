@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Formulario Bonainmobiliaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/logo-transparente-blanco.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Bonainmobiliaria</header>
+      <div class="progress-bar">
+        <div class="step">
+          <p>Paso 1</p>
+          <div class="bullet">
+            <span>1</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Paso 2</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Paso 3</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Fin</p>
+          <div class="bullet">
+            <span>4</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+      </div>
+      <div class="form-outer">
+        <form method="post" action="https://script.google.com/macros/s/AKfycbxuUh1CznKy2Nov2tmST1iGsmrgnaFdcH3Oj9y14-0gHEWfVMO8DEjA2HbVrFbXVCQE/exec">
+          <div class="page slide-page">
+              <div class="title">¿En qué está interesado?</div>
+                <div class="radio-input">
+                  <div class="radio-input-item" id="div1">
+                    <label for="comprar">Comprar</label>
+                    <input type="radio" name="interes" id="comprar" value="comprar">
+                  </div>
+                  <div class="radio-input-item" id="div2">
+                    <label for="vender">Vender</label>
+                    <input type="radio" name="interes" id="vender" value="vender">
+                  </div>
+                </div>  
+            <div class="field">
+              <a href="https://bonainmobiliaria.es/politica_de_privacidad/" >Política de privacidad</a>
+              <button class="firstNext next boton">Siguiente</button>
+            </div>
+          </div>
+          <div class="page">
+            <div class="title">Tipo de inmueble</div>
+            <div class="radio-input">
+              <div class="radio-input-item" id="div3">
+                <label for="casa">Casa</label>
+                <input type="radio" name="inmueble" id="casa" value="casa">
+              </div>
+              <div class="radio-input-item" id="div4">
+                <label for="piso">Piso</label>
+                <input type="radio" name="inmueble" id="piso" value="piso">
+              </div>
+              <div class="radio-input-item" id="div5">
+                <label for="terreno">Terreno</label>
+                <input type="radio" name="inmueble" id="terreno" value="terreno">
+              </div>
+              <div class="radio-input-item" id="div6">
+                <label for="local">Local</label>
+                <input type="radio" name="inmueble" id="local" value="local">
+              </div>
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev">Atrás</button>
+              <button class="next-1 next">Siguiente</button>
+            </div>
+          </div>
+
+          <div class="page">
+            <div class="field">
+              <div class="label" id="precio">¿Por qué precio querría comprar?</div>
+              <input type="number" name="precio">
+            </div>
+            <div class="field">
+              <div class="label" id="tiempo">¿Cuando tiene pensado comprar?</div>
+              <select name="tiempo">
+                <option value="Tan pronto como sea posible">Tan pronto como sea posible</option>
+                <option value="De 6 a 12 messes">De 6 a 12 meses</option>
+                <option value="De 1 a 2 años">De 1 a 2 años</option>
+                <option value="En 2 años o más">En 2 años o más</option>
+              </select>
+            </div>
+            <div class="field">
+              <div class="label">Aproximación de renta anual</div>
+              <input type="number" name="renta">
+            </div>
+
+            <div class="field btns pas2">
+              <button class="prev-2 prev">Atrás</button>
+              <button class="next-2 next">Siguiente</button>
+            </div>
+          </div>
+
+          <div class="page">
+            <div class="title">Contacto</div>
+            <div class="field">
+              <div class="label">Nombre</div>
+              <input type="text" name="nombre" required>
+            </div>
+            <div class="field">
+              <div class="label">Email</div>
+              <input type="email" name="email" required>
+            </div>
+            <div class="field">
+              <div class="label">Teléfono</div>
+              <input type="number" name="telefono" required>
+            </div>
+            <div class="field btns">
+              <button class="prev-3 prev">Atrás</button>
+              <button type="submit" class="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+
+const comprar = document.getElementById('comprar');
+const vender = document.getElementById('vender');
+const casa = document.getElementById('casa');
+const piso = document.getElementById('piso');
+const terreno = document.getElementById('terreno');
+const local = document.getElementById('local');
+
+const div1 = document.getElementById('div1');
+const div2 = document.getElementById('div2');
+
+const div3 = document.getElementById('div3');
+const div4 = document.getElementById('div4');
+const div5 = document.getElementById('div5');
+const div6 = document.getElementById('div6');
+
+
+const precio = document.getElementById('precio');
+const tiempo = document.getElementById('tiempo');
+
+comprar.addEventListener('click', function() {
+  div1.style.border = '2px solid var(--main-color)';
+  div1.style.color ='var(--main-color)';
+  precio.textContent = '¿Por qué precio querría comprar?';
+  tiempo.textContent = '¿Cuándo tiene pensado comprar?';
+});
+
+vender.addEventListener('click', function() {
+  div2.style.border = '2px solid var(--main-color)';
+  div2.style.color ='var(--main-color)';
+  precio.textContent = '¿Qué presupuesto tienes?';
+  tiempo.textContent = '¿Cuando tiene pensado vender?';
+});
+
+comprar.addEventListener('blur', function() {
+    div1.style.border = '2px solid black';
+    div1.style.color ='black';
+  });
+
+vender.addEventListener('blur', function() {
+  div2.style.border = '2px solid black';
+  div2.style.color ='black';
+});
+
+casa.addEventListener('click', function() {
+  div3.style.border = '2px solid var(--main-color)';
+  div3.style.color ='var(--main-color)';
+});
+
+piso.addEventListener('click', function() {
+  div4.style.border = '2px solid var(--main-color)';
+  div4.style.color ='var(--main-color)';
+});
+
+casa.addEventListener('blur', function() {
+    div3.style.border = '2px solid black';
+    div3.style.color ='black';
+  });
+
+piso.addEventListener('blur', function() {
+  div4.style.border = '2px solid black';
+  div4.style.color ='black';
+});
+
+local.addEventListener('click', function() {
+  div6.style.border = '2px solid var(--main-color)';
+  div6.style.color ='var(--main-color)';
+});
+
+terreno.addEventListener('click', function() {
+  div5.style.border = '2px solid var(--main-color)';
+  div5.style.color ='var(--main-color)';
+});
+
+terreno.addEventListener('blur', function() {
+    div5.style.border = '2px solid black';
+    div5.style.color ='black';
+  });
+
+local.addEventListener('blur', function() {
+  div6.style.border = '2px solid black';
+  div6.style.color ='black';
+});
+
+
+const slidePage = document.querySelector(".slide-page");
+const nextBtnFirst = document.querySelector(".firstNext");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submitBtn = document.querySelector(".submit");
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bullet = document.querySelectorAll(".step .bullet");
+let current = 1;
+
+nextBtnFirst.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-75%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+submitBtn.addEventListener("click", function(){
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+  setTimeout(function(){
+    
+  },800);
+});
+
+prevBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "0%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnFourth.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+    </script>
+  </body>
+</html>
